@@ -1,0 +1,214 @@
+/*
+ * @name Discord
+ * @description Dark and light palette, shapes and type in the style of Discord.
+ * @author proimpacts
+ * @type base
+ */
+/* "gg sans" is proprietary and not bundled, so the font stack falls back like Discord does without it. */
+
+:root:not([data-theme=light]) {
+  --bg-rail: #1e1f22;
+  --bg-side: #2b2d31;
+  --bg-main: #313338;
+  --bg-elev: #2b2d31;
+  --bg-hover: #35373c;
+  --bg-active: #404249;
+  --bg-input: #1e1f22;
+  --bg-float: #111214;
+  --bg-floating: #111214;
+  --bg-side-solid: #2b2d31;
+  --text: #dbdee1;
+  --text-muted: #949ba4;
+  --text-faint: #80848e;
+  --border: #ffffff0f;
+  --accent: #5865f2;
+  --accent-hover: #4752c4;
+  --accent-soft: #5865f230;
+  --accent-fill: #5865f2;
+  --accent-fill-hover: #4752c4;
+  --on-accent: #fff;
+  --danger: #da373c;
+  --success: #23a55a;
+  --warning: #f0b132;
+  --shadow: 0 8px 16px #0000003d;
+  --dc-composer: #383a40;
+  --dc-msg-hover: #2e3035;
+  --dc-mention-bg: #5865f24d;
+  --dc-mention-fg: #c9cdfb;
+  --dc-scroll-thumb: #1a1b1e;
+  --dc-scroll-track: #2b2d31;
+}
+
+:root[data-theme=light] {
+  --bg-rail: #e3e5e8;
+  --bg-side: #f2f3f5;
+  --bg-main: #fff;
+  --bg-elev: #f2f3f5;
+  --bg-hover: #ebedef;
+  --bg-active: #d7d9dc;
+  --bg-input: #e3e5e8;
+  --bg-float: #fff;
+  --bg-floating: #fff;
+  --bg-side-solid: #f2f3f5;
+  --text: #313338;
+  --text-muted: #4e5058;
+  --text-faint: #5c5e66;
+  --border: #0607070f;
+  --accent: #5865f2;
+  --accent-hover: #4752c4;
+  --accent-soft: #5865f224;
+  --accent-fill: #5865f2;
+  --accent-fill-hover: #4752c4;
+  --on-accent: #fff;
+  --danger: #d83c3e;
+  --success: #248046;
+  --warning: #946a00;
+  --shadow: 0 8px 16px #00000029;
+  --dc-composer: #ebedef;
+  --dc-msg-hover: #f7f7f8;
+  --dc-mention-bg: #e0e3ff;
+  --dc-mention-fg: #505cdc;
+  --dc-scroll-thumb: #c1c3c7;
+  --dc-scroll-track: #f2f3f5;
+}
+
+:root {
+  --font: "Twemoji Flags", "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --radius: 8px;
+  --row-radius: 4px;
+}
+
+:root * {
+  scrollbar-color: var(--dc-scroll-thumb) var(--dc-scroll-track);
+}
+
+/* ---- Layout: Discord's proportions ---- */
+.app,
+.app.ui-refresh {
+  background: var(--bg-rail) !important;
+}
+.topbar.app-titlebar {
+  background: var(--bg-rail) !important;
+  height: 22px;
+}
+nav.rail {
+  background: var(--bg-rail) !important;
+}
+.sidebar,
+.side-panel {
+  background: var(--bg-side) !important;
+  border: 0 !important;
+}
+.sidebar {
+  width: 240px;
+}
+.side-panel {
+  width: 240px;
+}
+.main {
+  background: var(--bg-main) !important;
+}
+.sidebar-head,
+.server-head,
+.main-head {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 0 !important;
+  box-shadow: 0 1px 0 #00000033, 0 1.5px 0 #0000000d;
+}
+.main-head {
+  background: var(--bg-main);
+}
+.channel-row {
+  border-radius: 4px;
+}
+.channel-row .channel-main {
+  min-height: 32px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.members-panel .pick-row {
+  min-height: 42px;
+  border-radius: 4px;
+}
+.members-panel .nb,
+.members-panel .nb2-scrim {
+  display: none !important;
+}
+.nf {
+  font-family: var(--font) !important;
+}
+.app:has(.user-bar.floating) {
+  --acct-card-w: calc(72px + 240px - 16px);
+}
+/* The site clips the stage at the rail's edge, which cut off the voice panel where it sits over the rail. */
+@media (min-width: 761px) {
+  .app.ui-refresh .stage {
+    overflow: visible !important;
+  }
+}
+/* Voice panel and account card (see the Panels theme): Discord's flat, dark-gray cards. */
+:root:not([data-theme=light]) {
+  --vx-card-bg: #232428;
+  --vx-card-border: transparent;
+  --vx-card-radius: 8px;
+  --vx-card-shadow: none;
+  --vx-card-pad: 10px;
+  --vx-btn-bg: #2b2d31;
+  --vx-btn-hover: #35373c;
+  --vx-btn-radius: 8px;
+  --vx-btn-h: 40px;
+}
+:root[data-theme=light] {
+  --vx-card-bg: #ebedef;
+  --vx-card-border: transparent;
+  --vx-card-radius: 8px;
+  --vx-card-shadow: none;
+  --vx-card-pad: 10px;
+  --vx-btn-bg: #e3e5e8;
+  --vx-btn-hover: #d7d9dc;
+  --vx-btn-radius: 8px;
+  --vx-btn-h: 40px;
+}
+
+.composer-box {
+  background: var(--dc-composer);
+  border-radius: 8px;
+}
+.composer-box.joined {
+  border-radius: 0 0 8px 8px;
+}
+
+.msg:hover {
+  background: var(--dc-msg-hover);
+}
+.msg-author {
+  font-weight: 500;
+  font-size: 16px;
+}
+.msg-text {
+  font-size: 16px;
+  line-height: 1.375;
+}
+.msg-text button.mention {
+  background: var(--dc-mention-bg);
+  color: var(--dc-mention-fg);
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 500;
+}
+.msg-text button.mention:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.msg-actions {
+  background: var(--bg-main);
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--border), 0 8px 16px #00000029;
+}
+
+.reaction {
+  border-radius: 8px;
+}

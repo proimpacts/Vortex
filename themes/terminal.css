@@ -1,0 +1,68 @@
+/*
+ * @name Terminal
+ * @description A green-on-black command line. Monospace type everywhere, square corners, ">" prompts on channels and faint scanlines.
+ * @author proimpacts
+ * @version 1.0.0
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #050805;
+  --bg-side: #070b07;
+  --bg-main: #040704;
+  --bg-elev: #0c140c;
+  --bg-hover: #10200f;
+  --bg-active: #16301a;
+  --bg-input: #060d06;
+  --bg-float: #070b07;
+  --bg-floating: #050805;
+  --bg-side-solid: #070b07;
+  --text: #c8f7c8;
+  --text-muted: #6fb877;
+  --text-faint: #3f7a47;
+  --border: #1d4a24;
+  --accent: #39ff88;
+  --accent-hover: #7dffae;
+  --accent-soft: #39ff882b;
+  --accent-fill: #12a655;
+  --accent-fill-hover: #0e8a46;
+  --on-accent: #02130a;
+  --danger: #ff5c5c;
+  --success: #39ff88;
+  --warning: #ffd23f;
+  --radius: 0px;
+  --row-radius: 0px;
+  --r-sm: 0px; --r-md: 0px; --r-lg: 0px;
+  --shadow: 0 0 0 1px #1d4a24;
+  --font: "Cascadia Mono", "JetBrains Mono", "Fira Code", Consolas, "SF Mono", monospace;
+  --display: var(--font);
+}
+html body, html .app, html .app * { font-family: var(--font) !important; letter-spacing: 0; }
+html .app *:not(img):not(svg):not(.avatar):not(.rail-pill) { border-radius: 0 !important; }
+html .app, html .app.ui-refresh { background: #040704 !important; }
+html .app nav.rail, html .app .rail-wrap { background: #050805 !important; }
+html .app .sidebar, html .app .main, html .app .members-panel, html .app .side-panel { background: #040704 !important; border: 1px solid #1d4a24 !important; box-shadow: none !important; }
+html .app .main-head, html .app .sidebar-head { background: #070b07 !important; border-bottom: 1px solid #1d4a24 !important; }
+html .app .main-head .title, html .app .sidebar-head { text-transform: lowercase; }
+html .app .main-head .title::before { content: "~/"; color: #39ff88; margin-right: 2px; }
+/* prompts */
+html .app .channel-row .name::before { content: "> "; color: #3f7a47; }
+html .app .channel-row.active .name::before { content: "# "; color: #39ff88; }
+html .app .channel-row.active { background: #0f2a14 !important; box-shadow: inset 2px 0 0 #39ff88; }
+html .app .channel-row svg { display: none; }
+/* messages read like a log */
+html .app .msg-author { color: #39ff88 !important; text-transform: lowercase; }
+html .app .msg-author::before { content: "<"; color: #3f7a47; }
+html .app .msg-author::after { content: ">"; color: #3f7a47; }
+html .app .msg-time { color: #3f7a47; }
+html .app .msg:hover { background: #0a160a !important; }
+html .app .msg img.avatar, html .app .msg .avatar { filter: grayscale(1) contrast(1.1) brightness(.9); border-radius: 0 !important; }
+/* the prompt */
+html .app .composer-box { background: #060d06 !important; border: 1px solid #1d4a24 !important; }
+html .app .composer-box:focus-within { border-color: #39ff88 !important; box-shadow: 0 0 0 1px #39ff8855, 0 0 22px #39ff8826; }
+html .app .composer textarea { caret-color: #39ff88; caret-shape: block; }
+html .app .composer textarea::placeholder { color: #3f7a47; }
+html .app .rail-item { filter: grayscale(.85) contrast(1.05); }
+html .app .rail-item:hover, html .app .rail-item.active { filter: none; }
+/* faint scanlines over everything */
+html .app::after { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: repeating-linear-gradient(to bottom, transparent 0 2px, #00000026 2px 3px); }
+.ctx-menu, .overlay .modal { background: #070b07 !important; border: 1px solid #39ff8866 !important; }

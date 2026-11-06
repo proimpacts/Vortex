@@ -1,0 +1,29 @@
+/*
+ * @name Dracula
+ * @description The classic dark purple palette.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #1e1f29;
+  --bg-side: #21222c;
+  --bg-main: #282a36;
+  --bg-elev: #2d2f3d;
+  --bg-hover: #343746;
+  --bg-active: #44475a;
+  --bg-input: #21222c;
+  --bg-float: #21222c;
+  --bg-floating: #191a21;
+  --bg-side-solid: #21222c;
+  --text: #f8f8f2;
+  --text-muted: #b6b9d0;
+  --text-faint: #8f93b0;
+  --accent: #bd93f9;
+  --accent-hover: #a679f0;
+  --accent-soft: #bd93f929;
+  --accent-fill: #7b5bd6;
+  --accent-fill-hover: #6a4bc2;
+  --danger: #ff5555;
+  --success: #50fa7b;
+  --warning: #ffb86c;
+}

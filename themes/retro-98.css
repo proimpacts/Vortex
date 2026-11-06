@@ -1,0 +1,76 @@
+/*
+ * @name Retro 98
+ * @description Grey bevelled windows, a teal desktop and navy title bars. Everything looks like a 1998 desktop program.
+ * @author proimpacts
+ * @version 1.0.0
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #008080;
+  --bg-side: #c0c0c0;
+  --bg-main: #ffffff;
+  --bg-elev: #d4d0c8;
+  --bg-hover: #000080;
+  --bg-active: #000080;
+  --bg-input: #ffffff;
+  --bg-float: #c0c0c0;
+  --bg-floating: #c0c0c0;
+  --bg-side-solid: #c0c0c0;
+  --text: #000000;
+  --text-muted: #303030;
+  --text-faint: #606060;
+  --border: #808080;
+  --accent: #000080;
+  --accent-hover: #1084d0;
+  --accent-soft: #00008026;
+  --accent-fill: #000080;
+  --accent-fill-hover: #1084d0;
+  --on-accent: #ffffff;
+  --danger: #c00000;
+  --success: #008000;
+  --warning: #808000;
+  color-scheme: light;
+  --radius: 0px;
+  --row-radius: 0px;
+  --r-sm: 0px; --r-md: 0px; --r-lg: 0px;
+  --shadow: 2px 2px 0 #000;
+  --font: Tahoma, "MS Sans Serif", "Segoe UI", Verdana, sans-serif;
+  --display: var(--font);
+}
+html body, html .app, html .app * { font-family: var(--font) !important; }
+html .app *:not(img):not(svg):not(.avatar):not(.rail-pill) { border-radius: 0 !important; }
+html .app, html .app.ui-refresh { background: #008080 !important; gap: 6px; padding: 6px; box-sizing: border-box; }
+html .app nav.rail, html .app .rail-wrap { background: transparent !important; }
+/* raised windows */
+html .app .sidebar, html .app .members-panel, html .app .side-panel {
+  background: #c0c0c0 !important; color: #000 !important; border: 2px solid !important; border-color: #ffffff #404040 #404040 #ffffff !important;
+  box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #dfdfdf !important;
+}
+html .app .main { background: #ffffff !important; color: #000 !important; border: 2px solid !important; border-color: #ffffff #404040 #404040 #ffffff !important; box-shadow: inset -1px -1px 0 #808080 !important; }
+/* title bars */
+html .app .main-head, html .app .sidebar-head { background: linear-gradient(90deg, #000080, #1084d0) !important; color: #fff !important; border: 0 !important; min-height: 28px; }
+html .app .main-head *, html .app .sidebar-head * { color: #fff !important; }
+html .app .main-head .icon-btn, html .app .sidebar-head .icon-btn { background: #c0c0c0 !important; border: 2px solid !important; border-color: #fff #404040 #404040 #fff !important; }
+html .app .main-head .icon-btn *, html .app .sidebar-head .icon-btn * { color: #000 !important; }
+/* lists: navy highlight with white text, like a menu */
+html .app .channel-row, html .app .channel-row * { color: #000 !important; }
+html .app .channel-row:hover, html .app .channel-row.active { background: #000080 !important; }
+html .app .channel-row:hover *, html .app .channel-row.active * { color: #fff !important; }
+html .app .msg-text, html .app .msg-author, html .app .msg { color: #000 !important; }
+html .app .msg-author { font-weight: 700; }
+html .app .msg-time { color: #606060 !important; }
+html .app .msg:hover { background: #e8e8f8 !important; }
+html .app a { color: #0000ee; }
+/* the message box is a sunken text control; the send button is raised */
+html .app .composer-box { background: #fff !important; border: 2px solid !important; border-color: #404040 #fff #fff #404040 !important; box-shadow: inset 1px 1px 0 #808080 !important; }
+html .app .composer-box *, html .app .composer textarea { color: #000 !important; }
+html .app .composer-box .send-btn { background: #c0c0c0 !important; border: 2px solid !important; border-color: #fff #404040 #404040 #fff !important; }
+html .app .user-bar.floating, html .app .voice-bar { background: #c0c0c0 !important; border: 2px solid !important; border-color: #fff #404040 #404040 #fff !important; box-shadow: 2px 2px 0 #000 !important; }
+html .app .user-bar.floating *, html .app .voice-bar * { color: #000 !important; }
+html .app .rail-item { border: 2px solid !important; border-color: #fff #404040 #404040 #fff !important; }
+.ctx-menu, .overlay .modal { background: #c0c0c0 !important; color: #000 !important; border: 2px solid !important; border-color: #fff #404040 #404040 #fff !important; box-shadow: 3px 3px 0 #000 !important; }
+.ctx-menu *, .overlay .modal * { color: #000; }
+.ctx-menu button:hover { background: #000080 !important; }
+.ctx-menu button:hover * , .ctx-menu button:hover { color: #fff !important; }
+* { scrollbar-color: #c0c0c0 #e8e8e8; }
+::-webkit-scrollbar-thumb { background: #c0c0c0 !important; border: 2px solid; border-color: #fff #404040 #404040 #fff; border-radius: 0 !important; }

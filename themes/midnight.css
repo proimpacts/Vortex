@@ -1,0 +1,23 @@
+/*
+ * @name Midnight
+ * @description Deep navy with an indigo accent.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #0b0c14;
+  --bg-side: #10121c;
+  --bg-main: #151826;
+  --bg-elev: #1c2033;
+  --bg-hover: #232842;
+  --bg-active: #2c3252;
+  --bg-input: #1a1e30;
+  --bg-float: #10121c;
+  --bg-floating: #0b0c14;
+  --bg-side-solid: #10121c;
+  --accent: #7c8cff;
+  --accent-hover: #6577ff;
+  --accent-soft: #7c8cff29;
+  --accent-fill: #4f5fe0;
+  --accent-fill-hover: #3f4ecb;
+}

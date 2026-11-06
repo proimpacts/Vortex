@@ -1,0 +1,75 @@
+/*
+ * @name Blueprint
+ * @description A technical drawing: blueprint blue with a fine grid, white drafting lines, dashed outlines and monospace labels.
+ * @author proimpacts
+ * @version 1.0.0
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #082b4d;
+  --bg-side: #0b3a66;
+  --bg-main: #0d4274;
+  --bg-elev: #0f4c85;
+  --bg-hover: #ffffff1c;
+  --bg-active: #ffffff2e;
+  --bg-input: #0a3358;
+  --bg-float: #0b3a66;
+  --bg-floating: #082b4d;
+  --bg-side-solid: #0b3a66;
+  --text: #f3f9ff;
+  --text-muted: #b6d6f2;
+  --text-faint: #7fb0dc;
+  --border: #9fd3ff66;
+  --accent: #ffe08a;
+  --accent-hover: #fff0b8;
+  --accent-soft: #ffe08a2e;
+  --accent-fill: #2f7fc9;
+  --accent-fill-hover: #2468a8;
+  --on-accent: #ffffff;
+  --danger: #ff8a7a;
+  --success: #8affc1;
+  --warning: #ffe08a;
+  --radius: 2px;
+  --row-radius: 0px;
+  --r-sm: 0px; --r-md: 2px; --r-lg: 2px;
+  --shadow: 0 0 0 1px #9fd3ff66;
+  --font: "Cascadia Mono", "IBM Plex Mono", "Lucida Console", Consolas, monospace;
+  --display: var(--font);
+}
+html body, html .app, html .app * { font-family: var(--font) !important; }
+/* the paper: a fine grid every 20px and a stronger one every 100px */
+html .app, html .app.ui-refresh {
+  background:
+    linear-gradient(#ffffff26 1px, transparent 1px) 0 0 / 100px 100px,
+    linear-gradient(90deg, #ffffff26 1px, transparent 1px) 0 0 / 100px 100px,
+    linear-gradient(#ffffff12 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, #ffffff12 1px, transparent 1px) 0 0 / 20px 20px,
+    #0a3560 !important;
+  gap: 14px; padding: 14px; box-sizing: border-box;
+}
+html .app nav.rail, html .app .rail-wrap { background: transparent !important; }
+/* panels are outlines drawn on the paper, with little corner ticks */
+html .app .sidebar, html .app .main, html .app .members-panel, html .app .side-panel {
+  background: #0b3a66cc !important; border: 1px dashed #9fd3ff99 !important; box-shadow: none !important; position: relative;
+}
+html .app .sidebar::before, html .app .main::before { content: "+"; position: absolute; left: -7px; top: -12px; color: #ffe08a; font-size: 14px; pointer-events: none; }
+html .app .sidebar::after, html .app .main::after { content: "+"; position: absolute; right: -7px; bottom: -12px; color: #ffe08a; font-size: 14px; pointer-events: none; }
+html .app .main-head, html .app .sidebar-head { background: transparent !important; border-bottom: 1px solid #9fd3ff99 !important; }
+html .app .main-head .title::before { content: "FIG. "; color: #ffe08a; }
+html .app .sidebar-head { text-transform: uppercase; letter-spacing: .08em; }
+html .app .channel-row { border-bottom: 1px dotted #9fd3ff40; }
+html .app .channel-row .name::before { content: "- "; color: #7fb0dc; }
+html .app .channel-row.active { background: #ffffff1f !important; box-shadow: inset 3px 0 0 #ffe08a; }
+html .app .channel-row svg { opacity: .7; }
+html .app .msg { border-left: 1px dashed transparent; }
+html .app .msg:hover { background: #ffffff10 !important; border-left-color: #ffe08a; }
+html .app .msg-author { color: #ffe08a !important; text-transform: uppercase; letter-spacing: .05em; font-size: .9em; }
+html .app .msg-time { color: #7fb0dc; }
+html .app .composer-box { background: #0a3358cc !important; border: 1px dashed #9fd3ffaa !important; }
+html .app .composer-box:focus-within { border-style: solid !important; border-color: #ffe08a !important; box-shadow: 0 0 0 3px #ffe08a22; }
+html .app .rail-item { filter: grayscale(.4) contrast(1.05); outline: 1px dashed #9fd3ff80; outline-offset: 2px; }
+html .app .rail-item:hover, html .app .rail-item.active { filter: none; outline-color: #ffe08a; }
+html .app .user-bar.floating, html .app .voice-bar { background: #0b3a66ee !important; border: 1px dashed #9fd3ff99 !important; box-shadow: none !important; border-radius: 2px !important; }
+.ctx-menu, .overlay .modal { background: #0b3a66 !important; border: 1px dashed #9fd3ffcc !important; box-shadow: 0 10px 40px #00000066 !important; }
+* { scrollbar-color: #9fd3ff #0a3358; }
+::-webkit-scrollbar-thumb { background: #9fd3ff88 !important; border-radius: 0 !important; }
