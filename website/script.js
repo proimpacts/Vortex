@@ -16,7 +16,7 @@
     ];
     var ITEMS = [['Install', 'Start Yapin with Vortex'], ['Repair', "Put Vortex's files back"], ['Uninstall', 'Keep your settings'], ['Uninstall and Delete All Data', 'Wipe every trace']];
     var SCRIPTS = [
-      [['pr', '> ', 'Closing Yapin...'], ['ok', '+ ', 'Yapin is closed.'], ['pr', '> ', 'Setting up Vortex...'], ['ok', '+ ', 'Vortex 0.3.1 is ready.'], ['pr', '> ', 'Adding a desktop shortcut...'], ['ok', '+ ', 'Shortcut added.'], ['pr', '> ', 'Starting Yapin with Vortex...'], ['m', '  ', 'That was a demo, so nothing was installed.']],
+      [['pr', '> ', 'Closing Yapin...'], ['ok', '+ ', 'Yapin is closed.'], ['pr', '> ', 'Setting up Vortex...'], ['ok', '+ ', 'Vortex 0.3.2 is ready.'], ['pr', '> ', 'Adding a desktop shortcut...'], ['ok', '+ ', 'Shortcut added.'], ['pr', '> ', 'Starting Yapin with Vortex...'], ['m', '  ', 'That was a demo, so nothing was installed.']],
       [['pr', '> ', 'Closing Yapin...'], ['ok', '+ ', 'Yapin is closed.'], ['pr', '> ', "Putting Vortex's files back..."], ['ok', '+ ', 'Done. Your settings, plugins and backups were not touched.'], ['m', '  ', 'That was a demo.']],
       [['pr', '> ', 'Remove files from this PC? Your settings are kept.'], ['m', '  ', 'The real launcher asks first.'], ['m', '  ', 'That was a demo, so nothing was removed.']],
       [['pr', '> ', 'Delete everything and remove Vortex? (asks first)'], ['pr', '> ', 'Closing Yapin...'], ['pr', '> ', "Clearing Vortex's settings from Yapin..."], ['ok', '+ ', 'Done.'], ['pr', '> ', 'Removing Vortex...'], ['ok', '+ ', "All of Vortex's data was deleted."], ['m', '  ', 'That was a demo, so nothing was removed.']]
@@ -26,7 +26,7 @@
     function draw() {
       var out = [];
       BANNER.forEach(function (b) { out.push('   <span class="' + b[0] + '">' + b[1] + '</span>'); });
-      out.push('', '   <span class="m">plugins and themes for Yapin  ·  v0.3.1</span>', '');
+      out.push('', '   <span class="m">plugins and themes for Yapin  ·  v0.3.2</span>', '');
       out.push('   <span class="bd">╭' + new Array(67).join('─') + '╮</span>');
       ITEMS.forEach(function (it, i) {
         var line = pad('  ' + (i === sel ? '▸' : ' ') + ' ' + (i + 1) + '  ' + pad(it[0], 31) + it[1], 65);

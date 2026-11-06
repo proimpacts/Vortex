@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 (alpha)
+- UI Enhancements: your account card now runs under the server list, like Discord, and the voice call panel and music player line up with it.
+- Uninstall and Uninstall and Delete All Data now really delete, check that the folders are gone, and say so if something could not be removed.
+
 ## 0.3.1 (alpha)
 - New launcher choice: **Uninstall and Delete All Data**. It removes Vortex and every trace of its data for the current user: settings, plugin data, your own plugins and themes, saved messages, the backup and the logs, including Vortex's copy inside Yapin's own storage. Plain **Uninstall** now keeps your settings.
 - Added the Apache License 2.0 and a NOTICE file.

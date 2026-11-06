@@ -7,7 +7,7 @@
 **Plugins, themes and a better Settings for the Yapin desktop app.**
 Vortex starts Yapin for you and never edits its files.
 
-![Version](https://img.shields.io/badge/version-0.3.1-7c5cff?style=flat-square)
+![Version](https://img.shields.io/badge/version-0.3.2-7c5cff?style=flat-square)
 ![Status](https://img.shields.io/badge/status-alpha-f59e0b?style=flat-square)
 ![Plugins](https://img.shields.io/badge/plugins-68-8b5cf6?style=flat-square)
 ![Themes](https://img.shields.io/badge/themes-25-ec4899?style=flat-square)
