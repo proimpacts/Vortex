@@ -1,0 +1,74 @@
+/*
+ * @name Brutalist
+ * @description Stark white, thick black borders, hard offset shadows and one hot yellow. No gradients, no softness, no apologies.
+ * @author proimpacts
+ * @version 1.0.0
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #000000;
+  --bg-side: #ffffff;
+  --bg-main: #f4f4f0;
+  --bg-elev: #ffffff;
+  --bg-hover: #ffe600;
+  --bg-active: #ffe600;
+  --bg-input: #ffffff;
+  --bg-float: #ffffff;
+  --bg-floating: #ffffff;
+  --bg-side-solid: #ffffff;
+  --text: #000000;
+  --text-muted: #2b2b2b;
+  --text-faint: #5c5c5c;
+  --border: #000000;
+  --accent: #ff2e00;
+  --accent-hover: #cc2500;
+  --accent-soft: #ff2e0022;
+  --accent-fill: #000000;
+  --accent-fill-hover: #2b2b2b;
+  --on-accent: #ffffff;
+  --danger: #ff2e00;
+  --success: #00a85a;
+  --warning: #ffb800;
+  color-scheme: light;
+  --radius: 0px;
+  --row-radius: 0px;
+  --r-sm: 0px; --r-md: 0px; --r-lg: 0px;
+  --shadow: 6px 6px 0 #000;
+  --font: "Helvetica Neue", Arial, "Arial Black", system-ui, sans-serif;
+  --display: "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif;
+}
+html body, html .app { font-family: var(--font) !important; }
+html .app *:not(img):not(svg):not(.avatar):not(.rail-pill) { border-radius: 0 !important; }
+html .app, html .app.ui-refresh { background: #000 !important; gap: 10px; padding: 10px; box-sizing: border-box; }
+html .app nav.rail, html .app .rail-wrap { background: transparent !important; }
+html .app .sidebar, html .app .main, html .app .members-panel, html .app .side-panel { border: 3px solid #000 !important; box-shadow: 6px 6px 0 #ffe600 !important; color: #000 !important; }
+html .app .sidebar, html .app .members-panel, html .app .side-panel { background: #fff !important; }
+html .app .main { background: #f4f4f0 !important; }
+html .app .main-head, html .app .sidebar-head { background: #ffe600 !important; border-bottom: 3px solid #000 !important; color: #000 !important; }
+html .app .main-head *, html .app .sidebar-head * { color: #000 !important; }
+html .app .sidebar-head, html .app .main-head .title { font-family: var(--display) !important; text-transform: uppercase; letter-spacing: .02em; }
+html .app .channel-row, html .app .channel-row * { color: #000 !important; font-weight: 700; }
+html .app .channel-row { border: 2px solid transparent; margin: 2px 6px; }
+html .app .channel-row:hover { background: #ffe600 !important; border-color: #000; }
+html .app .channel-row.active { background: #000 !important; border-color: #000; box-shadow: 4px 4px 0 #ff2e00; }
+html .app .channel-row.active, html .app .channel-row.active * { color: #fff !important; }
+html .app .msg, html .app .msg-text { color: #000 !important; }
+html .app .msg-author { color: #000 !important; font-family: var(--display) !important; text-transform: uppercase; background: #ffe600; padding: 0 6px; border: 2px solid #000; }
+html .app .msg-time { color: #5c5c5c !important; font-family: ui-monospace, Consolas, monospace !important; }
+html .app .msg:hover { background: #fff !important; box-shadow: inset 6px 0 0 #000; }
+html .app a { color: #ff2e00; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; }
+html .app .composer-box { background: #fff !important; border: 3px solid #000 !important; box-shadow: 6px 6px 0 #000 !important; }
+html .app .composer-box *, html .app .composer textarea { color: #000 !important; }
+html .app .composer-box:focus-within { box-shadow: 6px 6px 0 #ff2e00 !important; }
+html .app .composer-box .send-btn { background: #000 !important; }
+html .app .composer-box .send-btn * { color: #fff !important; }
+html .app .user-bar.floating, html .app .voice-bar { background: #fff !important; border: 3px solid #000 !important; box-shadow: 5px 5px 0 #ff2e00 !important; }
+html .app .user-bar.floating *, html .app .voice-bar * { color: #000 !important; }
+html .app .rail-item { border: 3px solid #fff !important; background: #000; }
+html .app .rail-item.active { border-color: #ffe600 !important; }
+html .app .rail-wrap .rail-pill { background: #ffe600; width: 6px; }
+.ctx-menu, .overlay .modal { background: #fff !important; color: #000 !important; border: 3px solid #000 !important; box-shadow: 8px 8px 0 #000 !important; }
+.ctx-menu *, .overlay .modal * { color: #000; }
+.ctx-menu button:hover { background: #ffe600 !important; }
+* { scrollbar-color: #000 #fff; }
+::-webkit-scrollbar-thumb { background: #000 !important; border-radius: 0 !important; }

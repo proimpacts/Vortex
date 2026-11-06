@@ -1,0 +1,29 @@
+/*
+ * @name Nord
+ * @description Calm arctic blues and frosty text.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #242933;
+  --bg-side: #2b303b;
+  --bg-main: #2e3440;
+  --bg-elev: #3b4252;
+  --bg-hover: #434c5e;
+  --bg-active: #4c566a;
+  --bg-input: #272c36;
+  --bg-float: #2b303b;
+  --bg-floating: #242933;
+  --bg-side-solid: #2b303b;
+  --text: #eceff4;
+  --text-muted: #aab3c5;
+  --text-faint: #8f99ad;
+  --accent: #88c0d0;
+  --accent-hover: #6fb0c4;
+  --accent-soft: #88c0d029;
+  --accent-fill: #4f729f;
+  --accent-fill-hover: #43648e;
+  --danger: #bf616a;
+  --success: #a3be8c;
+  --warning: #ebcb8b;
+}

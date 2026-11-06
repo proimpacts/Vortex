@@ -1,0 +1,13 @@
+/*
+ * @name Larger Chat Text
+ * @description Bumps message text to 16px for easier reading. Stacks on any base theme.
+ * @author proimpacts
+ * @type overlay
+ */
+.msg-text {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.msg-author {
+  font-size: 16px;
+}

@@ -1,0 +1,69 @@
+/*
+ * @name Amber CRT
+ * @description An old amber-screen terminal: glowing orange-on-brown text, a curved-glass vignette, scanlines and bracketed titles.
+ * @author proimpacts
+ * @version 1.0.0
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #080400;
+  --bg-side: #0d0700;
+  --bg-main: #0a0500;
+  --bg-elev: #171002;
+  --bg-hover: #221704;
+  --bg-active: #2e1f06;
+  --bg-input: #0f0900;
+  --bg-float: #0d0700;
+  --bg-floating: #080400;
+  --bg-side-solid: #0d0700;
+  --text: #ffcf70;
+  --text-muted: #c98f1c;
+  --text-faint: #7d5712;
+  --border: #4a3208;
+  --accent: #ffb000;
+  --accent-hover: #ffc83d;
+  --accent-soft: #ffb00030;
+  --accent-fill: #b57a00;
+  --accent-fill-hover: #946400;
+  --on-accent: #1a0f00;
+  --danger: #ff6a3d;
+  --success: #ffd23f;
+  --warning: #ff9b1f;
+  --radius: 0px;
+  --row-radius: 0px;
+  --r-sm: 0px; --r-md: 0px; --r-lg: 0px;
+  --shadow: 0 0 0 1px #4a3208;
+  --font: "Cascadia Mono", "IBM Plex Mono", "Lucida Console", Consolas, monospace;
+  --display: var(--font);
+}
+html body, html .app, html .app * { font-family: var(--font) !important; }
+html .app *:not(img):not(svg):not(.avatar):not(.rail-pill) { border-radius: 0 !important; }
+html .app, html .app.ui-refresh { background: #060300 !important; }
+html .app nav.rail, html .app .rail-wrap { background: #080400 !important; }
+html .app .sidebar, html .app .main, html .app .members-panel, html .app .side-panel { background: #0a0500 !important; border: 1px solid #4a3208 !important; box-shadow: none !important; }
+html .app .main-head, html .app .sidebar-head { background: #0d0700 !important; border-bottom: 1px solid #4a3208 !important; }
+/* every bit of text glows a little, like phosphor */
+html .app .msg-text, html .app .msg-author, html .app .channel-row, html .app .main-head .title, html .app .sidebar-head { text-shadow: 0 0 7px #ffb00066; }
+/* titles in brackets, channels as commands */
+html .app .main-head .title::before { content: "[ "; color: #ffb000; }
+html .app .main-head .title::after { content: " ]"; color: #ffb000; }
+html .app .channel-row .name::before { content: "$ "; color: #7d5712; }
+html .app .channel-row.active .name::before { content: "> "; color: #ffb000; }
+html .app .channel-row.active { background: #241706 !important; box-shadow: inset 3px 0 0 #ffb000; }
+html .app .channel-row svg { display: none; }
+html .app .msg-author { color: #ffb000 !important; letter-spacing: .04em; }
+html .app .msg-time { color: #7d5712; }
+html .app .msg:hover { background: #120b01 !important; }
+html .app .msg .avatar, html .app .msg img.avatar { filter: sepia(1) saturate(2.4) hue-rotate(-12deg) brightness(.85); border-radius: 0 !important; }
+html .app .rail-item { filter: sepia(1) saturate(2.2) hue-rotate(-12deg) brightness(.8); }
+html .app .rail-item:hover, html .app .rail-item.active { filter: sepia(1) saturate(2.6) hue-rotate(-12deg) brightness(1.1); }
+html .app .composer-box { background: #0f0900 !important; border: 1px solid #4a3208 !important; }
+html .app .composer-box:focus-within { border-color: #ffb000 !important; box-shadow: 0 0 0 1px #ffb00066, 0 0 24px #ffb00030; }
+html .app .composer textarea { caret-color: #ffb000; caret-shape: block; }
+html .app .composer textarea::placeholder { color: #7d5712; }
+/* curved glass: a dark vignette at the edges, plus scanlines and a faint flicker */
+html .app::before { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, #000000b3 100%); }
+html .app::after { content: ""; position: fixed; inset: 0; z-index: 2147483000; pointer-events: none; background: repeating-linear-gradient(to bottom, transparent 0 2px, #00000030 2px 3px); }
+@keyframes vx-flicker { 0%, 100% { opacity: 1; } 47% { opacity: .985; } 50% { opacity: .96; } 53% { opacity: .99; } }
+@media (prefers-reduced-motion: no-preference) { html .app .main { animation: vx-flicker 5s infinite; } }
+.ctx-menu, .overlay .modal { background: #0d0700 !important; border: 1px solid #ffb00088 !important; }

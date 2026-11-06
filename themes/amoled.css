@@ -1,0 +1,22 @@
+/*
+ * @name AMOLED Black
+ * @description True black surfaces that switch off pixels on OLED screens.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #000000;
+  --bg-side: #000000;
+  --bg-main: #000000;
+  --bg-elev: #0e0e10;
+  --bg-hover: #17171a;
+  --bg-active: #232327;
+  --bg-input: #0e0e10;
+  --bg-float: #0a0a0c;
+  --bg-floating: #000000;
+  --bg-side-solid: #000000;
+  --text: #e8e8ea;
+  --text-muted: #9c9ca3;
+  --text-faint: #8a8a92;
+  --border: #ffffff1a;
+}

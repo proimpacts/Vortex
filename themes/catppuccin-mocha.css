@@ -1,0 +1,29 @@
+/*
+ * @name Catppuccin Mocha
+ * @description Soft pastel colors on a warm dark base.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #11111b;
+  --bg-side: #181825;
+  --bg-main: #1e1e2e;
+  --bg-elev: #262637;
+  --bg-hover: #313244;
+  --bg-active: #45475a;
+  --bg-input: #181825;
+  --bg-float: #181825;
+  --bg-floating: #11111b;
+  --bg-side-solid: #181825;
+  --text: #cdd6f4;
+  --text-muted: #a6adc8;
+  --text-faint: #8e93ab;
+  --accent: #cba6f7;
+  --accent-hover: #b78ef0;
+  --accent-soft: #cba6f729;
+  --accent-fill: #8a5fd0;
+  --accent-fill-hover: #774dbb;
+  --danger: #f38ba8;
+  --success: #a6e3a1;
+  --warning: #f9e2af;
+}

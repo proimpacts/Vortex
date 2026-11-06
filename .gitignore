@@ -1,0 +1,29 @@
+# Local state and machine-specific files
+.vixer-port
+node_modules/
+*.log
+
+# Discord's own artwork, supplied locally by the project owner. It is Discord's, not ours to republish.
+Discord assets/
+Vortex.lnk
+Vortex.exe
+
+# Page captures and local tooling that are not part of the project
+extracted-*.zip
+.claude/
+*.bak
+
+# The GitHub version ships only the plugins Vortex needs to work. Everything else stays on this PC.
+plugins/*
+!plugins/vixer-settings.js
+!plugins/settings-overhaul.js
+!plugins/settings-pages.js
+!plugins/ui-enhancements.js
+!plugins/auto-update.js
+!plugins/welcome-notice.js
+!plugins/helper-support.js
+# Windows launcher scripts are local only: the GitHub version is started from a terminal (npm start)
+*.bat
+
+# Build output (the finished single-file Vortex.exe and its staging files)
+dist/
