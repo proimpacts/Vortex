@@ -1,0 +1,40 @@
+/*
+ * @name My Theme
+ * @description One sentence about how it looks.
+ * @author Your name
+ * @version 1.0.0
+ * @type base
+ */
+
+/* Dark colors. Change these and the whole app follows. */
+:root:not([data-theme=light]) {
+  --bg-rail: #0e1015;     /* far-left server list and the frame */
+  --bg-side: #13151c;     /* channel list and side panels */
+  --bg-main: #171a22;     /* chat */
+  --bg-elev: #1e222c;     /* cards and raised surfaces */
+  --bg-hover: #242936;
+  --bg-active: #2c3242;
+  --bg-input: #1b1f29;
+  --text: #e9ebf2;
+  --text-muted: #9ba3b5;
+  --text-faint: #7f879b;
+  --accent: #ff7a59;      /* links and highlights */
+  --accent-fill: #d9482a; /* filled buttons */
+}
+
+/* Light colors (delete this block if your theme is dark only). */
+:root[data-theme=light] {
+  --bg-rail: #e9ebf2;
+  --bg-side: #f2f3f8;
+  --bg-main: #fbfbfd;
+  --bg-elev: #ffffff;
+  --text: #171a22;
+  --text-muted: #5b6275;
+  --accent: #c43f23;
+}
+
+/* Voice panel and account card (optional). */
+:root {
+  --vx-card-radius: 16px;
+  --vx-btn-radius: 12px;
+}

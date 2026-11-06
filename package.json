@@ -1,0 +1,17 @@
+{
+  "name": "vortex",
+  "version": "0.3.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "proimpacts",
+  "type": "module",
+  "description": "A plugin and theme platform for the Yapin desktop app",
+  "scripts": {
+    "start": "node launcher.mjs",
+    "dev": "node launcher.mjs --watch",
+    "addons": "node launcher.mjs --addons"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

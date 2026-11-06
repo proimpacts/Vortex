@@ -1,0 +1,371 @@
+/*
+ * @name Yapin Refresh
+ * @description A calmer, more considered interface: inset panels, one accent, real typography. Stacks with any color theme.
+ * @author proimpacts
+ * @type overlay
+ * @default on
+ */
+
+/* ---- Palette. Low specificity on purpose, so any color theme overrides it. ---- */
+:root {
+  --bg-rail: #0e1015;
+  --bg-side: #13151c;
+  --bg-main: #171a22;
+  --bg-elev: #1e222c;
+  --bg-hover: #242936;
+  --bg-active: #2c3242;
+  --bg-input: #1b1f29;
+  --bg-float: #1e222c;
+  --bg-floating: #0e1015;
+  --bg-side-solid: #13151c;
+  --text: #e9ebf2;
+  --text-muted: #9ba3b5;
+  --text-faint: #7f879b;
+  --border: #ffffff10;
+  --accent: #ff7a59;
+  --accent-hover: #ff8f72;
+  --accent-soft: #ff7a5922;
+  --accent-fill: #d9482a;
+  --accent-fill-hover: #c43f23;
+  --on-accent: #fff;
+  --danger: #f2646a;
+  --success: #3fcf82;
+  --warning: #f5b544;
+  --shadow: 0 16px 40px #00000066;
+  --radius: 16px;
+  --row-radius: 10px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --gap: 8px;
+  --display: "Funnel Display Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+:root[data-theme=light] {
+  --bg-rail: #e9ebf2;
+  --bg-side: #f2f3f8;
+  --bg-main: #fbfbfd;
+  --bg-elev: #ffffff;
+  --bg-hover: #eceef5;
+  --bg-active: #dfe2ec;
+  --bg-input: #ffffff;
+  --bg-float: #ffffff;
+  --bg-floating: #ffffff;
+  --bg-side-solid: #f2f3f8;
+  --text: #171a22;
+  --text-muted: #5b6275;
+  --text-faint: #6b7287;
+  --border: #00000016;
+  --accent: #c43f23;
+  --accent-hover: #a9351c;
+  --accent-soft: #d9482a1c;
+  --shadow: 0 16px 40px #1a1d2a24;
+}
+
+/* ---- Frame: the app sits on the darkest tone, panels float on it. ---- */
+.app,
+.app.ui-refresh {
+  background: var(--bg-rail) !important;
+}
+.topbar.app-titlebar {
+  background: var(--bg-rail) !important;
+  color: var(--text-faint);
+  font-size: 12px;
+  height: 28px;
+}
+nav.rail {
+  background: transparent !important;
+  border: 0 !important;
+}
+.sidebar,
+.main,
+.side-panel {
+  border: 0 !important;
+  border-radius: var(--r-lg);
+  margin-top: 0;
+  margin-bottom: var(--gap);
+}
+.sidebar {
+  background: var(--bg-side) !important;
+  width: 248px;
+  margin-right: var(--gap);
+  /* Visible, not hidden: the voice panel and account card are pulled out to the left over the server rail, and clipping cut them off. */
+  overflow: visible;
+}
+.sidebar-head {
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+}
+/* The site clips the stage at the rail's edge, which cut off the part of the voice panel that sits over the rail. */
+@media (min-width: 761px) {
+  .app.ui-refresh .stage {
+    overflow: visible !important;
+    border: 0 !important;
+  }
+}
+/* The account card and voice panel span the rail plus this sidebar, starting at the left edge. */
+.app:has(.user-bar.floating) {
+  --acct-card-w: calc(72px + 248px - 16px);
+}
+.main {
+  background: var(--bg-main) !important;
+  overflow: hidden;
+}
+.side-panel {
+  background: var(--bg-side) !important;
+  width: 264px;
+  margin-left: var(--gap);
+  margin-right: var(--gap);
+  overflow: hidden;
+}
+
+/* ---- Headers: place names get the display face and real weight. ---- */
+.sidebar-head,
+.server-head,
+.main-head {
+  height: 54px;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  background: transparent;
+}
+.server-head,
+.sidebar-head .title,
+.main-head .title-btn {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+.server-head.with-banner {
+  background-blend-mode: normal;
+}
+.main-head .icon-btn {
+  color: var(--text-muted);
+  border-radius: var(--r-md);
+}
+
+/* ---- Channel list: calm rows, sentence-case group names, one accent bar for where you are. ---- */
+.cat-head,
+.sidebar-label,
+.members-panel .side-panel-section,
+.side-panel .group-head {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 12.5px !important;
+  font-weight: 600;
+  color: var(--text-faint) !important;
+}
+.channel-row {
+  border-radius: var(--r-md);
+  position: relative;
+}
+.channel-row .channel-main {
+  min-height: 34px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.channel-row:hover .channel-main {
+  color: var(--text);
+}
+.channel-row:hover {
+  background: var(--bg-hover);
+}
+.channel-row.active {
+  background: var(--bg-active);
+}
+.channel-row.active .channel-main {
+  color: var(--text);
+  font-weight: 600;
+}
+.channel-row.active::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--accent);
+}
+
+/* ---- Server rail ---- */
+.rail-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: var(--bg-elev);
+}
+.rail-item:hover {
+  border-radius: var(--r-lg);
+}
+.rail-item.active,
+.rail-item.going {
+  border-radius: var(--r-lg);
+}
+.rail-pill {
+  background: var(--accent);
+}
+
+/* ---- Members: flat and quiet. The nameplate banners and glows are gone. ---- */
+.members-panel .nb,
+.members-panel .nb2-scrim {
+  display: none !important;
+}
+.members-panel .pick-row {
+  min-height: 40px;
+  border-radius: var(--r-md);
+  background: transparent;
+}
+.members-panel .pick-row:hover {
+  background: var(--bg-hover);
+}
+.members-panel .pick-row.offline {
+  opacity: 0.5;
+}
+
+.server-banner {
+  width: auto;
+  height: 76px;
+  margin: 6px 10px 8px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+/* ---- Messages: a readable column instead of edge-to-edge text. ---- */
+.messages-inner,
+.composer,
+.chat-start {
+  width: min(100%, 1000px);
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+.msg {
+  margin: 10px 8px 0;
+  padding: 4px 12px;
+  border-radius: var(--r-md);
+  gap: 14px;
+}
+.msg:hover {
+  background: color-mix(in srgb, var(--bg-hover) 55%, transparent);
+}
+.msg-author {
+  font-size: 15px;
+  font-weight: 650;
+}
+.msg-time {
+  color: var(--text-faint);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+.msg-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.msg-actions {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow);
+}
+.reaction {
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+/* ---- Composer ---- */
+.composer {
+  padding: 0 16px 26px;
+}
+/* "Someone is yapping": the site stretches it across the whole panel, left-aligned. Keep it in the same centered column as the composer. */
+.typing-line {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: min(100%, 1000px);
+  box-sizing: border-box;
+  padding: 0 32px;
+  bottom: 4px;
+}
+.composer-box {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: 0 1px 0 #00000026;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.composer-box.joined {
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+}
+.composer-box:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ---- Controls ---- */
+.btn {
+  border-radius: var(--r-md);
+  font-weight: 600;
+}
+input[type=text],
+input[type=search],
+input[type=password],
+input[type=email],
+input[type=number],
+textarea,
+select {
+  border-radius: var(--r-md);
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- Dialogs and settings ---- */
+.modal {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.settings-nav button {
+  border-radius: var(--r-md);
+  font-weight: 500;
+}
+.settings-nav button.active {
+  background: var(--bg-active);
+  color: var(--text);
+}
+.settings-nav-label {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 12.5px !important;
+  color: var(--text-faint) !important;
+}
+.settings-main h2,
+.modal h2,
+.vixer-pane h2 {
+  font-family: var(--display);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+/* ---- Context menus: near-black, like a floating layer above everything ---- */
+.ctx-menu {
+  background: var(--bg-floating) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+}
+.ctx-menu button {
+  border-radius: var(--r-md);
+}
+.ctx-menu button.danger {
+  color: var(--danger);
+}
+
+/* ---- Scrollbars ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-active) transparent;
+}

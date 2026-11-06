@@ -1,0 +1,13 @@
+/*
+ * @name Compact Chat
+ * @description Tighter message spacing so more fits on screen. Stacks on any base theme.
+ * @author proimpacts
+ * @type overlay
+ */
+.msg {
+  margin-top: 6px;
+  gap: 10px;
+}
+.msg-head {
+  line-height: 1.2;
+}

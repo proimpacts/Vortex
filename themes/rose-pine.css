@@ -1,0 +1,29 @@
+/*
+ * @name Rose Pine
+ * @description Muted dusk tones with a lavender accent.
+ * @author proimpacts
+ * @type base
+ */
+:root:not([data-theme=light]) {
+  --bg-rail: #14121f;
+  --bg-side: #1f1d2e;
+  --bg-main: #191724;
+  --bg-elev: #26233a;
+  --bg-hover: #2a273f;
+  --bg-active: #403d52;
+  --bg-input: #1f1d2e;
+  --bg-float: #1f1d2e;
+  --bg-floating: #14121f;
+  --bg-side-solid: #1f1d2e;
+  --text: #e0def4;
+  --text-muted: #a9a5c2;
+  --text-faint: #8f8ba8;
+  --accent: #c4a7e7;
+  --accent-hover: #b08fda;
+  --accent-soft: #c4a7e729;
+  --accent-fill: #7a5fae;
+  --accent-fill-hover: #6a4f9c;
+  --danger: #eb6f92;
+  --success: #9ccfd8;
+  --warning: #f6c177;
+}

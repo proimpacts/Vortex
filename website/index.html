@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vortex: plugins and themes for Yapin</title>
+  <meta name="description" content="Vortex adds plugins, themes and a better Settings to the Yapin desktop app. It never edits Yapin's files. Free, for Windows and Linux. Alpha.">
+  <meta name="theme-color" content="#0b0a12">
+  <meta property="og:title" content="Vortex: plugins and themes for Yapin">
+  <meta property="og:description" content="Make Yapin yours. Plugins, themes and a better Settings for the Yapin desktop app.">
+  <meta property="og:image" content="assets/icon.png">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top" id="top">
+    <a class="brand" href="#top" aria-label="Vortex, back to the top"><img src="assets/icon.png" alt="" width="32" height="32"><span>Vortex</span></a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Questions</a>
+      <a class="cta-sm" href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <svg class="spiral" id="spiral" viewBox="-500 -500 1000 1000" aria-hidden="true"></svg>
+      <div class="hero-copy">
+        <p class="badge"><span class="dot"></span>Alpha · free and open source</p>
+        <h1>Make Yapin yours.</h1>
+        <p class="lede">Vortex adds plugins, themes and a better Settings to the Yapin desktop app. It starts Yapin for you and never edits its files, so going back to plain Yapin is just opening it normally.</p>
+        <div class="cta">
+          <a class="btn primary" id="dl-main" href="#download">Get Vortex</a>
+          <a class="btn ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="facts" aria-label="Quick facts">
+          <li><b>68</b> plugins</li>
+          <li><b>25</b> themes</li>
+          <li><b>0</b> edits to Yapin</li>
+        </ul>
+      </div>
+
+      <div class="demo">
+        <div class="term-win" id="term-win">
+          <div class="term-bar"><img src="assets/icon.png" alt="" width="14" height="14"><span>Vortex</span><i></i><i></i><i></i></div>
+          <pre class="term" id="term" tabindex="0" role="application" aria-label="A live copy of the Vortex launcher. Use the arrow keys and Enter, or click a choice."></pre>
+        </div>
+        <p class="demo-hint">This is the real launcher, running in your browser. Click a choice or use the arrow keys and Enter.</p>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-h">
+      <h2 id="features-h">Everything is a switch.</h2>
+      <p class="sec-lede">Nothing changes until you turn it on, and everything can be turned off again.</p>
+      <div class="bento">
+        <article class="card plugins">
+          <h3>Plugins, one switch each</h3>
+          <p>Better search, quick chat, a message logger, unread jumps, nicer sliders. Take what you want and leave the rest. Try the switches.</p>
+          <ul class="toggles" id="toggles">
+            <li><button type="button" aria-pressed="true"><span class="sw"></span><b>QuickSwitcher</b><small>Ctrl+K jumps to any channel, person or server</small></button></li>
+            <li><button type="button" aria-pressed="true"><span class="sw"></span><b>BetterSearch</b><small>A real search box with filters</small></button></li>
+            <li><button type="button" aria-pressed="false"><span class="sw"></span><b>MessageLogger</b><small>Keeps deleted messages in place</small></button></li>
+            <li><button type="button" aria-pressed="true"><span class="sw"></span><b>SavedMessages</b><small>An inbox for the messages you bookmark</small></button></li>
+            <li><button type="button" aria-pressed="false"><span class="sw"></span><b>FocusTimer</b><small>A small timer with a soft chime</small></button></li>
+          </ul>
+        </article>
+        <article class="card themes">
+          <h3>Themes are just CSS</h3>
+          <p>One file changes the whole look. Dark, glass, terminal, blueprint: yours can be a few lines.</p>
+<pre class="code"><code><span class="k">:root</span> {
+  <span class="p">--accent</span>: <span class="v">#b69cff</span>;
+  <span class="p">--bg-main</span>: <span class="v">#0b0a12</span>;
+}</code></pre>
+        </article>
+        <article class="card make">
+          <h3>Make and share your own</h3>
+          <p>A plugin is one <code>.js</code> file. Write it in the app, preview it live, and export it to share.</p>
+<pre class="code"><code><span class="k">definePlugin</span>({
+  name: <span class="v">'HelloWorld'</span>,
+  start(api) { api.log(<span class="v">'hi'</span>); },
+});</code></pre>
+        </article>
+        <article class="card data">
+          <h3>Your data stays yours</h3>
+          <p>Settings and message history are kept in a file on your computer. Login and session data are never saved.</p>
+        </article>
+        <article class="card updates">
+          <h3>Updates look after themselves</h3>
+          <p>Vortex checks for new versions when it starts and installs them safely, with a backup it can restore.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-h">
+      <h2 id="how-h">How it works</h2>
+      <ol class="flow">
+        <li><span class="n">1</span><h3>You open Vortex</h3><p>It finds your Yapin install, closes Yapin if it is open, and starts it.</p></li>
+        <li><span class="n">2</span><h3>Vortex joins the page</h3><p>Its plugins and themes load before the first screen is drawn, so nothing flashes in late.</p></li>
+        <li><span class="n">3</span><h3>You change what you like</h3><p>Open Settings, scroll to Vortex, and switch things on. Close it and Yapin is plain again.</p></li>
+      </ol>
+      <div class="promise">
+        <div><b>Built to be removed</b><p>Yapin's files are never edited. Uninstall from the launcher, or just open Yapin the normal way.</p></div>
+        <div><b>You stay in charge</b><p>Plugins can read and change everything in Yapin, including messages. Only run ones you wrote or trust.</p></div>
+        <div><b>Updates are checked</b><p>Downloads come from GitHub over HTTPS, are checked and backed up first, and roll back if anything fails.</p></div>
+      </div>
+    </section>
+
+    <section class="get" id="download" aria-labelledby="get-h">
+      <div class="get-head">
+        <h2 id="get-h">Get Vortex</h2>
+        <p>One file for Windows and one script for Linux. Both are free. You need the Yapin desktop app installed first.</p>
+        <p class="get-ver"><span class="pill">Alpha</span><span id="get-ver">Latest release</span></p>
+      </div>
+      <div class="get-grid">
+        <article class="os">
+          <div class="os-top">
+            <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M3 5.2 10.4 4.2v7.1H3zM11.4 4.1 21 2.8v8.5h-9.6zM3 12.3h7.4v7.1L3 18.4zM11.4 12.3H21v8.9l-9.6-1.3z"/></svg>
+            <div><h3>Windows</h3><small>Windows 10 and 11</small></div>
+          </div>
+          <a class="btn primary big" id="dl-win" href="https://github.com/proimpacts/Vortex/releases/latest/download/Vortex.exe">Download Vortex.exe <span class="size" id="size-win">about 33 MB</span></a>
+          <ol class="steps">
+            <li><span>Install Yapin from <a href="https://www.yapper.website/download">yapper.website</a>.</span></li>
+            <li><span>Open <b>Vortex.exe</b>. It is one file, so there is nothing else to install.</span></li>
+            <li><span>Choose <b>Install</b>. If Yapin is open, Vortex closes it and starts it again with Vortex.</span></li>
+          </ol>
+          <p class="note">The file is not code-signed yet, so Windows may show a SmartScreen warning. Only continue (More info, then Run anyway) if you downloaded it from this page.</p>
+        </article>
+        <article class="os">
+          <div class="os-top">
+            <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 9.5 10 12l-3.5 2.5M12 15h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><h3>Linux</h3><small>x86-64 and ARM, with the Yapin AppImage</small></div>
+          </div>
+          <a class="btn big" id="dl-lin" href="https://github.com/proimpacts/Vortex/releases/latest/download/vortex.sh">Download vortex.sh <span class="size" id="size-lin">13 KB</span></a>
+          <ol class="steps">
+            <li><span>Save the Yapin AppImage from <a href="https://www.yapper.website/download">yapper.website</a> in your home folder or Downloads.</span></li>
+            <li><span>Make the script runnable and open it. It needs no root access.</span></li>
+            <li><span>Choose <b>Install</b>. Vortex uses your Node.js, or downloads the official one and checks it first.</span></li>
+          </ol>
+          <div class="codebox"><pre><code id="linux-cmd">chmod +x vortex.sh
+./vortex.sh</code></pre><button class="copy" id="copy-cmd" type="button" aria-label="Copy the commands">Copy</button></div>
+          <p class="note">Alpha: Linux support is newer than Windows, so expect a few more rough edges there. Tell us what breaks.</p>
+        </article>
+      </div>
+      <p class="get-foot">Vortex never edits Yapin's files, and you can remove it from its own menu. <a href="#faq">Read the questions</a> · <a href="https://github.com/proimpacts/Vortex/releases">All releases</a></p>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions</h2>
+      <details><summary>Is it finished?</summary><p>No. Vortex is in alpha: it works and is used daily, but it is young, so expect some rough edges. Tell us what breaks.</p></details>
+      <details><summary>Is this safe?</summary><p>Vortex never edits Yapin's files, and updates only come from the project's GitHub page over HTTPS, checked and backed up first. Plugins are powerful, so only run ones you trust.</p></details>
+      <details><summary>Will it get me banned?</summary><p>Vortex only changes how the app looks and works on your own computer. It is not made by the people behind Yapin, so check their Terms of Service before you use any mod.</p></details>
+      <details><summary>How do I go back to plain Yapin?</summary><p>Quit Yapin from the tray icon and open it the normal way. You can uninstall Vortex from its launcher.</p></details>
+      <details><summary>Does it work on Mac?</summary><p>Not yet. Yapin has no Mac app, and Vortex needs the desktop app.</p></details>
+      <details><summary>Where do I get Vortex?</summary><p>Only from this site or the <a href="https://github.com/proimpacts/Vortex">GitHub page</a>. Anything else claiming to be Vortex is not.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="30" height="30"><span>Vortex</span></a>
+        <p>Plugins, themes and a better Settings for the Yapin desktop app.</p>
+        <p class="legal">Vortex is an unofficial community project. It is not made by, or affiliated with, the people behind Yapin.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <b>Vortex</b>
+        <a href="#download">Download</a>
+        <a href="#features">Features</a>
+        <a href="#faq">Questions</a>
+        <a href="https://github.com/proimpacts/Vortex">GitHub</a>
+      </nav>
+      <div class="foot-made">
+        <b>Made by</b>
+        <a class="maker" href="https://github.com/proimpacts"><img src="assets/proimpacts.png" alt="" width="36" height="36"><span>proimpacts</span></a>
+        <small>Free to use. Alpha software: expect rough edges.</small>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
